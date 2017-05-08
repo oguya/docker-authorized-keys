@@ -1,0 +1,12 @@
+version: '3'
+services:
+  authorized-keys:
+    image: oguya/docker-authorized-keys
+    environment:
+      - AUTHORIZED_KEYS=ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGp8nRwd09yHscAk1LHWXzwgHL4reIqXT4lls7VQOwzd
+    volumes:
+      - /home/docker:/user
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
