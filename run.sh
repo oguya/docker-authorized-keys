@@ -2,7 +2,7 @@
 
 if [[ -n "${AUTHORIZED_KEYS}" ]]; then
     echo "Found authorized keys"
-    [[! -d /user/.ssh ]] && mkdir -p /user/.ssh
+    [[ ! -d /user/.ssh ]] && mkdir -p /user/.ssh
     chmod 700 /user/.ssh
     touch /user/.ssh/authorized_keys
     chmod 600 /user/.ssh/authorized_keys
